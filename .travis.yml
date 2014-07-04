@@ -1,7 +1,13 @@
 language: python
 python:
-  - "2.7"
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command to run tests
+- '2.7'
+install: pip install -r requirements.txt
 script: python app_tests.py
+deploy:
+  provider: heroku
+  api_key:
+    secure: Wcje4Ta4GlKoTdcndV3SKy53gihgHKAQg1k1cuDebY3xQ1T1JN40q4hodGNdz9EWGP7X52FBI1+dEzngU5lzUdEWKMJ2eUjzFmvVz20ItKX9NIqc+b3lQTwWyROPKEdmDyioK9+cVM5lFAysfMqVIbiFMrp6tnOe5RKBbID8gVg=
+  app: gentle-hamlet-9370
+  on:
+    repo: Skablam/Flask-Example
+  strategy: git
